@@ -29,3 +29,4 @@ git reset 只是在本地仓库中回退版本,而远程仓库中的版本不会
 1:在远程server 仓库目录下执行git reset --soft <版本号> 在远程不能使用--hard,--mixed;
 2:在本地把远程分支删除，然后再把reset后的内容push上去;
 1>创建本地分支备份 git branch old_master;
+2>push到远程 git push origin old_master:old_master;
