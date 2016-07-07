@@ -7,3 +7,25 @@ git push -u origin master
 当使用过git push origin master 后,下次提交必须使用git commit -a -m"XXXXX"
 
 而不能使用git commit -a --amend --no-edit 提交,否则提示当前本地分支落后有远程分支;
+
+查看分支：git branch -a
+切换分支：git checkout <branch>
+删除本地分支：git branch --delete <branch>
+删除remout分支: git push origin --delete <branch>;git push origin:<branch>
+
+reset三种命令方式
+git reset --mixed 此为默认方式,等价与git reset;回退commit和index信息,不回退源码;
+git reset --soft 只回退commit信息,不回退源码和index信息,如果还要提交直接commit即可;
+git reset --hard 回退源码,index,commit;
+
+上一个版本:HARD^
+前三个版本:HARD~3
+会退到和远程一样: git reset --hard origin/master;
+回退到某一个版本: git reset <版本号>
+
+git reset 只是在本地仓库中回退版本,而远程仓库中的版本不会发生变化
+
+如何回退远程分支
+1:在远程server 仓库目录下执行git reset --soft <版本号> 在远程不能使用--hard,--mixed;
+2:在本地把远程分支删除，然后再把reset后的内容push上去;
+1>创建本地分支备份 git branch old_master;
