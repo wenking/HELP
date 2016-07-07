@@ -18,6 +18,7 @@ git reset --mixed 此为默认方式,等价与git reset;回退commit和index信�
 git reset --soft 只回退commit信息,不回退源码和index信息,如果还要提交直接commit即可;
 git reset --hard 回退源码,index,commit;
 
+当前版本:HARD
 上一个版本:HARD^
 前三个版本:HARD~3
 会退到和远程一样: git reset --hard origin/master;
