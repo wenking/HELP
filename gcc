@@ -2,3 +2,4 @@
 gcc -g -shared -fPIC -Wl,-soname,SO-NAME[libXXX.so.major],-o libXXX.so.major.minor.realesNo. XXX.c
 静态库的生成
 ar rc libxxxx.a xxxx.o
+
